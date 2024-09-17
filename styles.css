@@ -1,0 +1,272 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.header{
+  background-color: rgba(255, 255, 0, 0.4);
+  /*border-radius: 20px 20px 0px 0px;*/
+  padding: 20px 0;
+}
+
+.head-container{
+  padding: 20xp;
+  display: flex;
+  gap: 10px;
+}
+
+.head-container div{
+  padding: 15px;
+  display: block;
+  flex-grow: 1;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.info-container{
+  padding: 10px;
+  display: flex;
+  gap: 5px;
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.info-container div{
+  display: block;
+  flex-grow: 1;
+  justify-content: space-between;
+  font-family: Verdana, Tahoma, sans-serif;
+  font-size: 17px;
+}
+
+.game-container {
+  width: 60%;
+  max-width: 90%;
+  min-height: 100vh;
+  text-align: center;
+  background-color: #fff;
+  /*border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);*/
+}
+
+#answer{
+  font-size: 20px;
+  font-weight: bold;
+  font-family: Verdana, Tahoma, sans-serif;
+  display: block;
+  padding: 10px;
+}
+
+.word-board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.letters-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 5px;
+  flex-wrap: wrap;
+  align-items: center; /* Căn giữa theo trục dọc trong khung chữ */
+  justify-content: center; /* Căn giữa theo trục ngang trong khung chữ */
+  padding: 5px;
+  min-height: 50px;
+}
+
+.letters-container div {
+  display: flex;
+  align-items: center; /* Căn giữa theo trục dọc trong khung chữ */
+  justify-content: center; /* Căn giữa theo trục ngang trong khung chữ */
+  padding: 10px;
+  background-color: #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+  min-width: 30px;
+  min-height: 30px;
+  font-size: 15px;
+}
+
+.input-box {
+  display: flex;
+  align-items: center; /* Căn giữa theo trục dọc */
+  justify-content: center; /* Căn giữa theo trục ngang */
+  gap: 5px; /* Khoảng cách giữa các ký tự */
+  min-height: 50px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border: 2px dashed #ccc;
+  border-radius: 5px;
+  flex-wrap: wrap; /* Đảm bảo rằng các ký tự sẽ xuống dòng nếu không đủ chỗ */
+  width: auto;
+  min-width: 200px;
+}
+
+.input-box div {
+  display: flex;
+  align-items: center; /* Căn giữa theo trục dọc trong khung chữ */
+  justify-content: center; /* Căn giữa theo trục ngang trong khung chữ */
+  background-color: #ddd;
+  padding: 5px;
+  border-radius: 5px;
+  min-width: 35px;
+  min-height: 35px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#example{
+  padding: 10px;
+  margin: 10px;
+  font-size: 17px;
+  line-height: 1.5;
+  height: 40px;
+}
+
+footer{
+  display: block;
+  position: relative;
+  bottom: 0;
+}
+
+#submitWord{
+  display: block;
+  margin: 0 auto;
+}
+
+#next{
+  display: block;
+  float: right;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+.button-container{
+  padding: 5px;
+}
+
+.message {
+  display: block;
+  color: red;
+  font-size: 16px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  padding: 5px;
+  height: 25px;
+}
+
+.info{
+  margin: 5px;
+  padding: 10px;
+}
+
+.class, .number{
+  padding: 10px;
+  margin: 5px;
+  font-size: 18px;
+}
+
+a{
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+  float: left;
+  margin: 10px 30px;
+}
+
+/* khung hinh dien thoai*/
+
+@media (max-width: 767px) {
+
+  .game-container {
+    width: auto;
+  }
+
+  .input-box{
+    min-height: 30px;
+  }
+
+  .input-box div {
+    min-width: 20px;
+    min-height: 20px;
+    font-size: 17px;
+  }
+
+
+  .letters-container div {
+    min-width: 15px;
+    min-height: 15px;
+  }
+
+  #example{
+    font-size: 15px;
+  }
+
+  .head-container div{
+    font-size: 15px;
+  }
+
+  .info-container div{
+    font-size: 13px;
+  }
+
+}
+
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+  .game-container {
+    width: 80%;
+  }
+  
+  .input-box{
+    min-height: 30px;
+  }
+
+  #example{
+    font-size: 17px;
+  }
+
+  .input-box div {
+    min-width: 20px;
+    min-height: 20px;
+    font-size: 17px;
+  }
+
+  .letters-container div {
+    min-width: 17px;
+    min-height: 17px;
+  }
+
+  .head-container div{
+    font-size: 17px;
+  }
+
+  .info-container div{
+    font-size: 17px;
+  }
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ghép từ vựng</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+<!--
+  <h2>Upload a Text File</h2>
+  <input type="file" id="fileInput" accept=".txt" />
+-->
+  <div class="game-container">
+    <div class="header">
+      <h1>Ghép Từ Vựng</h1>
+    </div>
+
+    <div id="class" class="class"></div>
+    <div class="info-container">
+      <div id="meaning" class="info"></div>
+      <div id="type" class="info"></div>
+      <div id="pronounce" class="info"></div>
+    </div>
+    <div id="number" class="number"></div>
+    <div class="head-container"></div>
+    <div id="answer"></div>
+
+    <div id="example" class="info"></div>
+
+    <div class="word-board">
+      <div class="letters-container" id="lettersContainer">
+        <!-- Ký tự sẽ xuất hiện tại đây -->
+      </div>
+      <div class="message" id="message"></div>
+      <div class="input-container">
+        <div class="input-box" id="inputBox">
+          <!-- Người chơi kéo thả từ ký tự -->
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="button-container"></div>
+      <button id="submitWord">Kiểm tra</button>
+      <button id="next">Tiếp theo</button>
+      <a href="menu.html"><i class="bi bi-reply-fill" style="padding: 10px;" h> về trang chủ</i></a>
+  </div>
+  </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+<script>
+  // Hàm xử lý từng dòng
+  function parseTextToObject(text) {
+    const parts = text.split("'").map(part => part.trim());
+
+    return {
+      name: parts[1],
+      pronounce: parts[3],
+      meaning: parts[5],
+      type: parts[7]
+    };
+  }
+
+  // Hàm xử lý toàn bộ dữ liệu từ file text có nhiều dòng
+  function parseMultipleLines(text) {
+    const lines = text.split('\n').map(line => line.trim()).filter(line => line.length > 0);
+    const result = lines.map(line => parseTextToObject(line));
+
+    // Thêm tên mảng
+    return { "Từ vựng từ file": result };
+  }
+
+  // Hàm đọc file từ input
+  document.getElementById('fileInput').addEventListener('change', function (event) {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+
+    // Đọc nội dung file dưới dạng text
+    reader.onload = function (e) {
+      const content = e.target.result;
+      const parsedData = parseMultipleLines(content);
+
+    };
+
+    // Bắt đầu đọc file
+    if (file) {
+      reader.readAsText(file);
+    }
+  });
+</script>
+
+</html>
